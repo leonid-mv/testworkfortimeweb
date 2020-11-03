@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap')
+
+*, *::before, *::after
+	box-sizing: inherit
+
+::-webkit-scrollbar 
+	width: 3px
+	height: 3px
+::-webkit-scrollbar-track-piece
+	background-color: #ffffff
+::-webkit-scrollbar-thumb
+	background-color: $accent
+	border-radius: 3px
+
+html
+	box-sizing: border-box
+
+body
+	margin: 0
+	overflow-x: hidden
+	min-width: 320px
+	opacity: 1
+	position: relative
+	font-family: 'Roboto', sans-serif
+
+img
+	max-width: 100%
+
+a 
+	text-decoration: none
+	transition: .3s color
+	&:hover
+		color: $accent
+
+.container
+	width: 100%
+	max-width: 1200px
+	margin: 0 auto
+	padding-right: 15px
+	padding-left: 15px
+
+.create_page
+	.openSidebarButton
+		width: 36px
+		height: 50px
+		background: $accent
+		position: fixed
+		top: 100px
+		left: 0
+		z-index: 99
+		display: flex
+		align-items: center
+		justify-content: center
+		cursor: pointer
+		transition: .3s background ease-out
+		user-select: none
+		&::after
+			content: ''
+			display: block
+			background-position: center
+			background-size: contain
+			background-image: url(../img/settings.svg)
+			width: 28px
+			height: 30px
+		&:hover
+			background: lighten($accent, 5%)
+
+
+h2
+	text-align: center
+	font-size: 36px
+	letter-spacing: 1px
+	margin: 60px 0
+
+.sidebar_item-enter-active, .sidebar_item-leave-active
+	transition: height .5s ease, opacity .3s ease
+
+.sidebar_item-enter, .sidebar_item-leave-to
+	height: 0 !important
+	opacity: 0
